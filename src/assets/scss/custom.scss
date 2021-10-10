@@ -1,0 +1,69 @@
+body {
+	font-family: $font-primary !important;
+}
+
+a {
+	text-decoration: none !important;
+	transition: all .3s ease;
+	&:hover {
+		color: $light-gold !important;
+	}
+}
+.bg-primary {
+	background-color: $grey-primary !important;
+}
+.bg-secondary {
+	background-color: $grey-secondary !important;
+}
+.color-pink {
+	color: $pink;
+}
+
+.btn-wrapper {
+	text-align: center;
+	a {
+		&.btn-custom {
+			padding: 5px 10px;
+			background: $black;
+			border: 2px solid $black;
+			color: $white;
+			transition: all .3s ease;
+			&:hover {
+				background: transparent;
+			}
+		}
+	}
+}
+button[type=submit] {
+	padding: 5px 10px;
+	background: $black;
+	border: 2px solid $black;
+	color: $white;
+	transition: all .3s ease;
+	&:hover {
+		background: transparent;
+		color: $light-gold;
+	}
+}
+
+section {
+	.title-head {
+		text-align: center;
+		display: block;
+		font-size: 60px;
+		font-family: $font-secondary;
+		@media (max-width: 1920px){
+			font-size: 40px;
+		}
+		@media (max-width: 750px){
+			font-size: 30px;
+		}
+	}
+	.divider {
+		color: $black;
+		width: 10%;
+		margin-bottom: 2em;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

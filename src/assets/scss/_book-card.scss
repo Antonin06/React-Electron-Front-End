@@ -1,0 +1,67 @@
+#books {
+	h1 {
+		@include font(64px, 500, 0, $font-secondary);
+		@media (max-width: 987px) {
+			@include font(50px, 500, 0, $font-secondary);
+		}
+	}
+	.card-book {
+		position: relative;
+		img {
+			transition: all .3s ease;
+			height: 300px;
+			object-fit: contain;
+		}
+		.card-body {
+			padding: 0 !important;
+			color: $black;
+			.category-link {
+				position: absolute;
+				color: $white;
+				font-style: italic;
+				padding: 2px 5px;
+				background: $light-gold;
+				transform: translate(-50%, -50%);
+				transition: all .3s ease;
+				&:hover {
+					color: $white !important;
+					text-decoration: underline !important;
+				}
+			}
+			.card-title {
+				padding-top: 20px;
+				transition: all .3s ease;
+			}
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			width: 100%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			transition: all .3s ease;
+		}
+		&:hover {
+			img {
+				filter: brightness(50%);
+			}
+			.card-title {
+				color: $light-gold;
+			}
+			&:after {
+				content: "Read More";
+				position: absolute;
+				width: 100%;
+				text-align: center;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background: $black;
+				padding: 10px 30px;
+				color: $white;
+				@include font(16px, 500, null, $font-open);
+			}
+		}
+	}
+}

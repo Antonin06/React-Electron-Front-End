@@ -1,0 +1,15 @@
+#articles {
+	background: $grey-secondary;
+}
+.articles {
+	.card-article {
+		.card-body {
+			padding: 10px 0;
+			.card-title {
+				font-weight: $weight-regular;
+				font-size: $font-34;
+				font-family: $font-secondary;
+			}
+		}
+	}
+}

@@ -1,0 +1,112 @@
+#single-book {
+	padding: 50px 0;
+	.single-book {
+		.column-book-info {
+			.category-link {
+				color: $black;
+				font-style: italic;
+			}
+			.book-title {
+				margin-top: 20px;
+				font-size: $font-34;
+				font-family: $font-secondary;
+			}
+			.author {
+				margin-bottom: 20px;
+			}
+			.description {
+				padding-right: 50%;
+			}
+			.info {
+				font-weight: $weight-bold;
+			}
+		}
+		.more-infos {
+			padding: 5em 0;
+			width: 50%;
+			margin: auto;
+			@media (max-width: 991.98px) {
+				width: 100%;
+			}
+			.nav-tabs {
+				justify-content: center;
+				padding-bottom: 10px;
+				border-bottom: 1px solid $black;
+				margin-bottom: 15px;
+				.nav-item {
+					border-right: 1px solid $black;
+					@media (max-width: 360px) {
+						border: 0;
+					}
+					.nav-link {
+						color: $black;
+						margin: 0;
+						padding: 0 15px;
+						font-size: $font-12;
+						font-family: $font-open;
+						letter-spacing: $spacing-3;
+						border: 0;
+						&.active {
+							color: $light-gold;
+							background-color: transparent !important;
+							border: 0;
+							border-radius: 0;
+						}
+						&:hover {
+							color: $light-gold;
+						}
+						&:focus {
+							border: 0;
+							border-color: transparent;
+							outline: none;
+							isolation: unset;
+						}
+					}
+					&:last-child {
+						border: 0;
+					}
+					&:focus {
+						border: 0;
+						outline: none;
+						isolation: unset;
+					}
+				}
+			}
+			.tab-content {
+				#reviews {
+					.title-tab {
+						font-size: $font-20;
+						font-family: $font-secondary;
+					}
+					form {
+						#content {
+							width: 100%;
+							border: 0;
+						}
+					}
+					.card-comment {
+						border-bottom: 1px solid $light-gold;
+						padding: 10px 0;
+						margin-bottom: 10px;
+						.card-header-comment {
+							.infos {
+								font-family: $font-secondary;
+								font-size: $font-12;
+								.user {
+									color: $light-gold;
+									font-weight: $weight-extra-bold;
+								}
+							}
+							i {
+								cursor: pointer;
+							}
+						}
+						.body {
+							padding: 0 15px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

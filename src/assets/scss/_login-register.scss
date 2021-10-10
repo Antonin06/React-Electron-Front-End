@@ -1,0 +1,41 @@
+//#login {
+//	background: $grey-secondary;
+//	.wrapper {
+//		display: flex;
+//		align-items: center;
+//		justify-content: center;
+//	}
+//}
+#modal-login,
+#modal-register {
+	.modal-dialog {
+		position: absolute;
+		max-width: 650px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) !important;
+		.modal-content {
+			border: 0;
+			.btn-close {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				float: right;
+			}
+			.formulaire {
+				#login,
+				#register {
+					.wrapper {
+						form {
+							input {
+								border: 0;
+								border-bottom: 1px solid $black;
+								background: transparent;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
