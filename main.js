@@ -57,7 +57,6 @@ function createWindow() {
       slashes: true
     })
   }
-
   mainWindow.loadURL(indexPath)
 
   // Don't show until we are ready and loaded

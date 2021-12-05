@@ -7,6 +7,8 @@ import Slick from "./Home/Slider";
 import CardBook from "./Home/Card-Book";
 import Card from "./Blog/Card";
 import Newsletter from "./Home/Newsletter";
+import {ReactComponent as Logo} from '../assets/images/intro.svg';
+import intro from '../assets/images/intro.svg';
 
 
 function Home() {
@@ -19,20 +21,21 @@ function Home() {
 
   return (
     <div>
-      <div className="container-fluid" id="slickjs">
-        <div className="wrapper-txt-bg">
-          <span className="txt-bg">Lorem ipsum dolor sit amet</span>
-          <span className="txt-bg">Lorem ipsum dolor sit amet</span>
+      <section id="intro">
+        {/*<Logo/>*/}
+        <img src={intro} className="img-fluid" alt={document.title}/>
+        <div className="container">
+          <div className="wrapper">
+            <h1>{document.title}</h1>
+            <p>Search, find your next book available in our store</p>
+          </div>
         </div>
-        <div className="container-fluid p-5">
-          <Slick/>
-        </div>
-      </div>
+      </section>
       <section id="books" className="bg-secondary">
         <div className="container py-5 books">
           <span className="title-head">Nos derniers livres</span>
           <hr className="divider"/>
-          <div className="row row-cols-1 row-cols-md-2 g-5 mb-5">
+          <div className="row row-cols-1 row-cols-md-2 gy-5 mb-5">
             {data.books.map(book => (
               <div className="col-md-3 col-sm-6" key={book.id}>
                 <CardBook {...book}/>
@@ -48,7 +51,7 @@ function Home() {
         <span className="title-head">Nos derniers articles</span>
         <hr className="divider"/>
         <div className="container">
-          <div className="row row-cols-1 row-cols-md-2 g-5 mb-5">
+          <div className="row row-cols-1 row-cols-md-2 gy-5 mb-5">
             {data.articles.map(post => (
               <div className="col-md-4 col-sm-6" key={post.id}>
                 <Card {...post}/>

@@ -49,7 +49,7 @@ function Slick() {
 				{data1.books.map(book => (
 					<div key={book.id} className="wrapper">
 						<div className="img-wrapper">
-							<img src={`${API_URL}${book.thumbnail.url}`} alt="" className="img-fluid img-slider" />
+							<img src={`${book.thumbnail.url}`} alt="" className="img-fluid img-slider" />
 						</div>
 						<div className="wrapper-info">
 							<Link to={`/book/${book.id}`} className="title">{book.title}</Link>

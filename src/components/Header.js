@@ -20,13 +20,6 @@ function Header() {
     refetch()
   }
 
-  const { loading, error, data, refetch } = useQuery(FAV, {
-    variables:{ id }
-  })
-
-  console.log(data, "Header")
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error :(</p>
 
   return (
     <>
@@ -39,21 +32,6 @@ function Header() {
               <li><a href="">yt.</a></li>
               <li><a href="">fb.</a></li>
             </ul>
-          </div>
-
-          <div className="log-wrapper">
-            {isAuthenticated &&
-            <>
-              <span className="ms-3">Welcome back,{username}!</span>
-              <span onClick={handleDisconnect} className="ms-3 logout">Logout</span>
-            </>
-            }
-            {!isAuthenticated &&
-            <button className="ms-3 logout" data-bs-toggle="modal" data-bs-target="#modal-login">Login</button>
-            }
-            {!isAuthenticated &&
-            <button className="ms-3 logout" data-bs-toggle="modal" data-bs-target="#modal-register">Register</button>
-            }
           </div>
         </div>
       </div>
@@ -68,17 +46,7 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <Link to='/'>Home</Link>
-              <Link to='/blog' className="">Blog</Link>
               <Link to='/books' className="">All Books</Link>
-              {isAuthenticated &&
-              <Link to='/mybooks' className="">
-                My books
-                <span className="fa-layers fa-fw">
-									<i className="fas fa-heart fa-1x"></i>
-									<span className="fa-layers-counter">{data.users[0].favorites.length}</span>
-							  	</span>
-              </Link>
-              }
             </ul>
           </div>
         </div>

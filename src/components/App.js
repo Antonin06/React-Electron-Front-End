@@ -1,5 +1,5 @@
 import React , {useEffect, useState} from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {BrowserRouter, BrowserRouter as Router, HashRouter, Route, Switch} from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import {API_URL_APOLLO} from "../config/environement/dev";
 import AuthContext from "../contexts/authContext";
@@ -10,6 +10,7 @@ import Header from "./Header";
 import '../assets/scss/App.scss'
 import 'bootstrap';
 import Footer from "./Footer";
+import AllBooks from "./Allbooks";
 
 const client = new ApolloClient({
   uri: API_URL_APOLLO,
@@ -34,15 +35,16 @@ function App() {
       }}
     >
       <div id="app">
-        <Router>
-          <ApolloProvider client={client}>
-            <Header/>
-            <Switch>
-              <Route path="/" component={Home} />
-            </Switch>
-            <Footer/>
-          </ApolloProvider>
-        </Router>
+        <HashRouter>
+            <ApolloProvider client={client}>
+              <Header/>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/books" component={AllBooks} />
+              </Switch>
+              <Footer/>
+            </ApolloProvider>
+        </HashRouter>
       </div>
     </AuthContext.Provider>
   )
